@@ -40,13 +40,19 @@ body {
   padding-top: 14px;
 }
 .header-main-div .nav-wrap {
-  width: 40%;
+  width: 30%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   display: flex;
   justify-content: space-between;
+}
+.header-main-div .nav-wrap p {
+  cursor: pointer;
+  font-family: Karma, sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
 }
 .header-main-div .active {
   text-decoration: none;
@@ -107,4 +113,35 @@ body {
   position: absolute;
   left: 48rem;
   bottom: 2.6rem;
+}
+.header-main-div .category-drop-down {
+  width: 150px;
+  height: 150px;
+  font-size: 13px;
+  border-radius: 6px;
+  background-color: #27607E;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 37rem;
+  bottom: 0rem;
+  top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: fadeInDown;
+  animation-duration: 1s;
+}
+.header-main-div .category-drop-down .p {
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+.header-main-div .category-drop-down .p:hover {
+  color: #ff734d;
+  transition: all 350ms ease-in;
+  font-size: 16px;
 }/*# sourceMappingURL=Header.css.map */

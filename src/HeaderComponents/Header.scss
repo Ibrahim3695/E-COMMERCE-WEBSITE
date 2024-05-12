@@ -1,4 +1,5 @@
 @import "../variables";
+
 @import url('https://fonts.googleapis.com/css2?family=Karma:wght@300;400;500;600;700&display=swap');
 
 body {
@@ -42,12 +43,19 @@ body {
         }
     }
 
-    .nav-wrap{
-        width: 40%;
+    .nav-wrap {
+        width: 30%;
         height: 100%;
         // background-color: #27607e;
         @include center;
         @include between;
+
+        p {
+            cursor: pointer;
+            font-family: Karma, sans-serif;
+            font-size: 14.5px;
+            font-weight: 600;
+        }
     }
 
     .active {
@@ -80,8 +88,9 @@ body {
             border-radius: 10px;
             border: 1px solid #27607e;
             outline: none;
-            
+
         }
+
         button {
             width: 25%;
             height: 60%;
@@ -91,17 +100,18 @@ body {
             border: none;
             color: white;
             font-size: 12px;
-            
+
         }
 
     }
 
-    .cart-icon{
+    .cart-icon {
         position: absolute;
         left: 47.4rem;
         bottom: 2rem;
     }
-    .round-count{
+
+    .round-count {
         width: 15px;
         height: 15px;
         font-size: 13px;
@@ -112,5 +122,36 @@ body {
         position: absolute;
         left: 48rem;
         bottom: 2.6rem;
+    }
+
+    .category-drop-down {
+        width: 150px;
+        height: 150px;
+        font-size: 13px;
+        border-radius: 6px;
+        background-color: #27607E;
+        color: white;
+        @include center;
+        position: absolute;
+        left: 37rem;
+        bottom: 0rem;
+        top: 3.5rem;
+        @include column;
+        gap: 14px;
+        animation: fadeInDown;
+        animation-duration: 1s;
+
+        .p {
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+
+            &:hover {
+                color: #ff734d;
+                transition: all 350ms ease-in;
+                font-size: 16px;
+            }
+        }
     }
 }

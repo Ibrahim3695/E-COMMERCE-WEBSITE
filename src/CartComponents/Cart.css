@@ -82,6 +82,7 @@
   display: flex;
   justify-content: space-between;
   padding-inline: 3rem;
+  position: relative;
 }
 .main-cart .cart-main-div .cart-card .PQT-main-div .bold-only {
   font-weight: 700;
@@ -100,4 +101,21 @@
   border: none;
   cursor: pointer;
   color: white;
+}
+.main-cart .cart-main-div .cart-card .PQT-main-div .removeBTN {
+  width: 30%;
+  height: 6vh;
+  background: #27607e;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  right: 3rem;
+  top: 11rem;
+}
+.main-cart .cart-main-div .cart-card .PQT-main-div .removeBTN:hover {
+  background: #ff734d;
+  transition: all 350ms ease-in-out;
 }/*# sourceMappingURL=Cart.css.map */

@@ -5,6 +5,7 @@ import { Context } from '../ContextComponents/Context'
 
 const Cart = () => {
 
+  const { dispatch } = useContext(Context)
   const { cart } = useContext(Context)
   console.log(cart)
 
@@ -27,9 +28,9 @@ const Cart = () => {
                 </aside>
 
                 <aside className='text-wrapp'>
-                  <p style={{color: "#053d5c"}}>{c.title}</p>
-                  <p style={{fontWeight: "500"}}>Rate: {c.rating.rate}%</p>
-                  <p style={{fontWeight: "500"}}>Count: {c.rating.count}</p>
+                  <p style={{ color: "#053d5c" }}>{c.title}</p>
+                  <p style={{ fontWeight: "500" }}>Rate: {c.rating.rate}%</p>
+                  <p style={{ fontWeight: "500" }}>Count: {c.rating.count}</p>
                 </aside>
 
               </div>
@@ -37,12 +38,15 @@ const Cart = () => {
               <div className='PQT-main-div'>
                 <p>${c.price}</p>
                 <aside className='BTN-qty-inc'>
-                  <button>+</button>
-                  <p>1</p>
-                  <button>-</button>
+                  <button onClick={() => dispatch({ type: "IncreaseQTY", payload: c })}>+</button>
+                  <p>{c.QTY}</p>
+                  <button onClick={() => dispatch({ type: "DecreaseQTY", payload: c })}>-</button>
                 </aside>
-                <p className='bold-only'>$4000</p>
+                <p className='bold-only'>${c.price * c.QTY}</p>
+
+                <button className='removeBTN' onClick={() => dispatch({ type: "removeItem", payload: c })}>Remove from cart</button>
               </div>
+
             </article>
           ))
         }

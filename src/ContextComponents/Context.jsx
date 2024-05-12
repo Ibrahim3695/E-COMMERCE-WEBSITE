@@ -9,7 +9,43 @@ const reducer = (state, action) => {
         case "AddToCart": {
             const addItems = state.findIndex((e)=> e.id == action.payload.id)
 
-            return [...state,{...action.payload, addItems:addItems}]
+            if(addItems >= 0){
+                state[addItems].QTY +=1;
+
+                return [...state]
+
+            }else{
+                return [...state,{...action.payload, addItems:addItems, QTY:1}]
+
+            }
+
+        }
+        case "IncreaseQTY": {
+            const addItems = state.findIndex((e)=> e.id == action.payload.id)
+
+                state[addItems].QTY +=1;
+
+                return [...state]
+
+        }
+        case "DecreaseQTY": {
+            const updateItems = state.findIndex((i) => i.id === action.payload.id)
+            if (state[updateItems].QTY === 1) {
+                const removeItems = state.filter((i) => i.id !== action.payload.id)
+            return removeItems;
+
+            }else{
+
+                state[updateItems].QTY -= 1;
+                return [...state];
+            }
+
+        }
+        case "removeItem": {
+            const removeItems = state.filter((i) => i.id !== action.payload.id)
+
+            return removeItems;
+
         }
 
     }

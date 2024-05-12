@@ -1,14 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import "./Header.css"
 import { Link, NavLink } from 'react-router-dom'
 import { FaOpencart } from 'react-icons/fa'
 import { BsCart2 } from 'react-icons/bs'
 import { Context } from '../ContextComponents/Context'
-
+import { BiMouse } from 'react-icons/bi'
+import 'animate.css';
 
 const Header = () => {
-  const {cart} = useContext(Context)
-  
+  const { cart } = useContext(Context)
+
+  const [show, setShow] = useState(false)
 
   return (
     <div className='header-main-div'>
@@ -23,15 +25,15 @@ const Header = () => {
           Home
         </NavLink>
 
-        <NavLink to="/about"
+        {/* <NavLink to="/about"
           className={({ isActive, isNotActive }) => isActive ? "active" : "notActive"}>
           About
-        </NavLink>
+        </NavLink> */}
 
-        <NavLink to="/category"
+        <p onClick={()=> setShow(!show)} to="/category-drop-down"
           className={({ isActive, isNotActive }) => isActive ? "active" : "notActive"}>
           Category
-        </NavLink>
+        </p>
 
         <BsCart2 className='cart-icon' size={"20px"} />
         <NavLink to="/cart"
@@ -46,7 +48,16 @@ const Header = () => {
         <button>SEARCH</button>
       </article>
 
-      <section className='round-count'>{cart.length}</section>
+      {cart.length === 0 ? null : <section className='round-count'>{cart.length}</section>}
+
+      {
+        show ? <section className='category-drop-down' >
+        <Link to={"./mencloth"} className='p'>Men's clothing</Link>
+        <Link to={"/jewelery"} className='p'>Jewelery</Link>
+        <Link to={"/electronics"} className='p'>Electronics</Link>
+        <Link to={"/women'sclothing"} className='p'>Women's clothing</Link>
+      </section> : null 
+      }
     </div>
   )
 }

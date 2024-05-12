@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 
-import "./Card.css"
+import "./Men.css"
 import { Context } from '../ContextComponents/Context'
 
-const Card = () => {
+const Men = () => {
 
   const [getAllProducts, setGetAllProducts] = useState([])
 
@@ -13,7 +13,7 @@ const Card = () => {
   useEffect(() => {
     const fetctProducts = async () => {
       try {
-        const res = await axios.get('https://fakestoreapi.com/products');
+        const res = await axios.get("https://fakestoreapi.com/products/category/men's clothing");
         setGetAllProducts(res.data)
         console.log(res.data)
       } catch (error) {
@@ -51,4 +51,4 @@ const Card = () => {
   )
 }
 
-export default Card
+export default Men
