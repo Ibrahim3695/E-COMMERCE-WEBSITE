@@ -98,7 +98,19 @@ body {
 
     .cart-icon{
         position: absolute;
-        left: 48rem;
+        left: 47.4rem;
         bottom: 2rem;
+    }
+    .round-count{
+        width: 15px;
+        height: 15px;
+        font-size: 13px;
+        background-color: #ff734d;
+        color: white;
+        border-radius: 50%;
+        @include center;
+        position: absolute;
+        left: 48rem;
+        bottom: 2.6rem;
     }
 }

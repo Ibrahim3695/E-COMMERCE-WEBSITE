@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Header.css"
 import { Link, NavLink } from 'react-router-dom'
 import { FaOpencart } from 'react-icons/fa'
 import { BsCart2 } from 'react-icons/bs'
+import { Context } from '../ContextComponents/Context'
+
 
 const Header = () => {
+  const {cart} = useContext(Context)
+  
+
   return (
     <div className='header-main-div'>
       <article className='image-icon'>
@@ -40,6 +45,8 @@ const Header = () => {
         <input type="text" placeholder='Seach Product' />
         <button>SEARCH</button>
       </article>
+
+      <section className='round-count'>{cart.length}</section>
     </div>
   )
 }
