@@ -12,12 +12,15 @@ const Cart = () => {
   return (
     <div className='main-cart'>
       <section className='cart-main-div'>
+        {cart.length === 0 ? "Your cart is empty..." :
         <ul>
           <p>Products</p>
           <p>Price</p>
           <p>Quantity</p>
           <p>Total Price</p>
         </ul>
+}
+        
         {
           cart?.map((c) => (
             <article className='cart-card' key={c.id}>
@@ -50,7 +53,7 @@ const Cart = () => {
             </article>
           ))
         }
-
+      
 
       </section>
     </div>
