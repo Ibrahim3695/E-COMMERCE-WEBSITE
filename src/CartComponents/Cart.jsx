@@ -19,7 +19,7 @@ const Cart = () => {
           <p>Quantity</p>
           <p>Total Price</p>
         </ul>
-}
+}  
         
         {
           cart?.map((c) => (

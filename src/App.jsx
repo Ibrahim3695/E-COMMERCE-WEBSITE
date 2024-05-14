@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider
 } from 'react-router-dom'
 import Layout from './LayoutComponent/Layout'
@@ -13,7 +13,7 @@ import Electronics from './ElectronicsComponents/Electronics'
 import WomenCloth from './WomenComponents/WomenCloth'
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Layout />,

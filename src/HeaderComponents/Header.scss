@@ -155,3 +155,156 @@ body {
         }
     }
 }
+
+
+
+@media screen and (max-width: 320px) {
+    
+.header-main-div {
+    width: 100%;
+    height: 75px;
+    background-color: yellow;
+    position: sticky;
+    top: 0;
+    @include center;
+    @include between;
+    padding-inline: 4rem;
+    z-index: 999999;
+
+
+
+    .image-icon {
+        width: 17%;
+        height: 90%;
+        background-color: antiquewhite;
+        @include center;
+        @include between;
+
+        h1 {
+            font-family: Karma, sans-serif;
+            font-size: 30px;
+            font-weight: 800;
+            color: #27607e;
+            padding-top: 14px;
+
+
+        }
+    }
+
+    .nav-wrap {
+        width: 30%;
+        height: 100%;
+        // background-color: #27607e;
+        @include center;
+        @include between;
+        display: none;
+
+        p {
+            cursor: pointer;
+            font-family: Karma, sans-serif;
+            font-size: 14.5px;
+            font-weight: 600;
+        }
+    }
+
+    .active {
+        text-decoration: none;
+        color: rgb(252, 87, 45);
+        font-family: Karma, sans-serif;
+        font-weight: 800;
+        font-size: 14.5px;
+    }
+
+    .notActive {
+        text-decoration: none;
+        color: #202020;
+        font-family: Karma, sans-serif;
+        font-size: 14.5px;
+        font-weight: 600;
+    }
+
+    .toggle-div {
+        width: 25%;
+        height: 90%;
+        // background-color: antiquewhite;
+        @include center;
+        @include between;
+        display: none;
+
+        input {
+            width: 73%;
+            height: 60%;
+            padding-left: 10px;
+            border-radius: 10px;
+            border: 1px solid #27607e;
+            outline: none;
+
+        }
+
+        button {
+            width: 25%;
+            height: 60%;
+            border-radius: 7px;
+            background-color: #27607e;
+            cursor: pointer;
+            border: none;
+            color: white;
+            font-size: 12px;
+
+        }
+
+    }
+
+    .cart-icon {
+        position: absolute;
+        left: 47.4rem;
+        bottom: 2rem;
+    }
+
+    .round-count {
+        width: 15px;
+        height: 15px;
+        font-size: 13px;
+        background-color: #ff734d;
+        color: white;
+        border-radius: 50%;
+        @include center;
+        position: absolute;
+        left: 48rem;
+        bottom: 2.6rem;
+    }
+
+    .category-drop-down {
+        width: 150px;
+        height: 150px;
+        font-size: 13px;
+        border-radius: 6px;
+        background-color: #27607E;
+        color: white;
+        @include center;
+        position: absolute;
+        left: 37rem;
+        bottom: 0rem;
+        top: 3.5rem;
+        @include column;
+        gap: 14px;
+        animation: fadeInDown;
+        animation-duration: 1s;
+
+        .p {
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+
+            &:hover {
+                color: #ff734d;
+                transition: all 350ms ease-in;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+
+}
