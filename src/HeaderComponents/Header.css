@@ -54,6 +54,9 @@ body {
   font-size: 14.5px;
   font-weight: 600;
 }
+.header-main-div .nav-wrap div {
+  position: relative;
+}
 .header-main-div .active {
   text-decoration: none;
   color: rgb(252, 87, 45);
@@ -95,11 +98,6 @@ body {
   color: white;
   font-size: 12px;
 }
-.header-main-div .cart-icon {
-  position: absolute;
-  left: 47.4rem;
-  bottom: 2rem;
-}
 .header-main-div .round-count {
   width: 15px;
   height: 15px;
@@ -111,8 +109,8 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 48rem;
-  bottom: 2.6rem;
+  left: 2.7rem;
+  bottom: 1.2rem;
 }
 .header-main-div .category-drop-down {
   width: 150px;
@@ -145,12 +143,15 @@ body {
   transition: all 350ms ease-in;
   font-size: 16px;
 }
+.header-main-div .menu {
+  display: none;
+}
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .header-main-div {
     width: 100%;
     height: 75px;
-    background-color: yellow;
+    background-color: white;
     position: sticky;
     top: 0;
     display: flex;
@@ -158,13 +159,12 @@ body {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    padding-inline: 4rem;
+    padding-inline: 1.5rem;
     z-index: 999999;
   }
   .header-main-div .image-icon {
     width: 17%;
     height: 90%;
-    background-color: antiquewhite;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -217,6 +217,7 @@ body {
     display: flex;
     justify-content: space-between;
     display: none;
+    background-color: red;
   }
   .header-main-div .toggle-div input {
     width: 73%;
@@ -285,5 +286,125 @@ body {
     color: #ff734d;
     transition: all 350ms ease-in;
     font-size: 16px;
+  }
+  .header-main-div .menu {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    cursor: pointer;
+  }
+}
+/*Tablet View*/
+@media screen and (max-width: 884px) and (min-width: 480px) {
+  .header-main-div {
+    width: 100%;
+    height: 75px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 1.5rem;
+    z-index: 999999;
+  }
+  .header-main-div .image-icon {
+    width: 17%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  .header-main-div .image-icon h1 {
+    font-family: Karma, sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: #27607e;
+    padding-top: 14px;
+  }
+  .header-main-div .nav-wrap {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+  }
+  .header-main-div .nav-wrap p {
+    cursor: pointer;
+    font-family: Karma, sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+  }
+  .header-main-div .toggle-div {
+    width: 30%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+  }
+  .header-main-div .toggle-div input {
+    width: 65%;
+    height: 60%;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 1px solid #27607e;
+    outline: none;
+  }
+  .header-main-div .toggle-div button {
+    width: 29%;
+    height: 60%;
+    border-radius: 7px;
+    background-color: #27607e;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-size: 11px;
+  }
+  .header-main-div .category-drop-down {
+    width: 150px;
+    height: 150px;
+    font-size: 13px;
+    border-radius: 6px;
+    background-color: #27607E;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 3rem;
+    bottom: 0rem;
+    top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    animation: fadeInDown;
+    animation-duration: 1s;
+  }
+  .header-main-div .category-drop-down .p {
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+  }
+  .header-main-div .category-drop-down .p:hover {
+    color: #ff734d;
+    transition: all 350ms ease-in;
+    font-size: 16px;
+  }
+  .header-main-div .menu {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    cursor: pointer;
+    display: none;
   }
 }/*# sourceMappingURL=Header.css.map */

@@ -6,6 +6,7 @@ import { BsCart2 } from 'react-icons/bs'
 import { Context } from '../ContextComponents/Context'
 import { BiMouse } from 'react-icons/bi'
 import 'animate.css';
+import { IoMenu } from 'react-icons/io5'
 
 const Header = () => {
   const { cart } = useContext(Context)
@@ -15,7 +16,7 @@ const Header = () => {
   return (
     <div className='header-main-div'>
       <article className='image-icon'>
-        <FaOpencart size={"35px"} color='rgb(252, 87, 45)' />
+        <FaOpencart size={"35px"} color='rgb(252, 87, 45)' className='loogo'/>
         <h1>Modern</h1>
       </article>
 
@@ -30,16 +31,21 @@ const Header = () => {
           About
         </NavLink> */}
 
-        <p onClick={()=> setShow(!show)} to="/category-drop-down"
+        <p onClick={() => setShow(!show)} to="/category-drop-down"
           className={({ isActive, isNotActive }) => isActive ? "active" : "notActive"}>
           Category
         </p>
 
-        <BsCart2 className='cart-icon' size={"20px"} />
-        <NavLink to="/cart"
-          className={({ isActive, isNotActive }) => isActive ? "active" : "notActive"}>
-          Cart
-        </NavLink>
+        <div>
+          <NavLink to="/cart"
+            className={({ isActive, isNotActive }) => isActive ? "active" : "notActive"}>
+            Cart
+            <BsCart2 className='cart-icon' size={"20px"} />
+          </NavLink>
+        
+          {cart.length === 0 ? null : <section className='round-count'>{cart.length}</section>}
+
+        </div>
       </section>
 
 
@@ -48,16 +54,19 @@ const Header = () => {
         <button>SEARCH</button>
       </article>
 
-      {cart.length === 0 ? null : <section className='round-count'>{cart.length}</section>}
+
 
       {
         show ? <section className='category-drop-down' >
-        <Link to={"./mencloth"} className='p'>Men's clothing</Link>
-        <Link to={"/jewelery"} className='p'>Jewelery</Link>
-        <Link to={"/electronics"} className='p'>Electronics</Link>
-        <Link to={"/women'sclothing"} className='p'>Women's clothing</Link>
-      </section> : null 
+          <Link to={"./mencloth"} className='p'>Men's clothing</Link>
+          <Link to={"/jewelery"} className='p'>Jewelery</Link>
+          <Link to={"/electronics"} className='p'>Electronics</Link>
+          <Link to={"/women'sclothing"} className='p'>Women's clothing</Link>
+        </section> : null
       }
+
+      <IoMenu className='menu' />
+
     </div>
   )
 }
